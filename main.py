@@ -30,9 +30,9 @@ async def ping(ctx):
     await ctx.respond(f"Pong! Latency is {bot.latency:.2f} seconds")
     log.info(f"Pong! Latency: {bot.latency:.2f}")
 
-@bot.command(description="Use to get IVAOTH Members Data")
+@bot.command(description="Use to get IVAO Members Data")
 async def members(ctx):
-    file_path = 'IVAOTH_Members.csv'
+    file_path = 'IVAO_Members.csv'
     names_list = []
 
     try:
@@ -43,18 +43,18 @@ async def members(ctx):
 
         names_text = '\n'.join(names_list)
 
-        with open('IVAOTH_Members.txt', 'w', encoding='utf-8') as text_file:
+        with open('IVAO_Members.txt', 'w', encoding='utf-8') as text_file:
             text_file.write(names_text)
 
-        with open('IVAOTH_Members.txt', 'rb') as file:
-            await ctx.send(file=discord.File(file, 'IVAOTH_Members.txt'))
-            log.info("IVAOTH Members list sent")
+        with open('IVAO_Members.txt', 'rb') as file:
+            await ctx.send(file=discord.File(file, 'IVAO_Members.txt'))
+            log.info("IVAO Members list sent")
 
-        os.remove('IVAOTH_Members.txt')
-        log.info("IVAOTH_Members.txt has been deleted")
+        os.remove('IVAO_Members.txt')
+        log.info("IVAO_Members.txt has been deleted")
 
     except Exception as e:
-        await ctx.send("An error occurred while processing the IVAOTH Members data.")
+        await ctx.send("An error occurred while processing the IVAO Members data.")
         log.error(f"Error in members command: {e}")
 
 @bot.command(description="Request Airport METAR")
