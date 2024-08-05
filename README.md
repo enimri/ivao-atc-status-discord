@@ -19,16 +19,22 @@ Go to <code>config.json</code> and fill your data
     "airport_prefixes": ["OJAI", "OSDI",] #CHANGE DESIRE AIRPORT ONLY PUT THE ICAO OF THE AIRPORT
 }
 
-
+bot must have : bot ,view channels ,  send messages ,  embed links ,  read message history
 
  After editing Code go SSH and CD atc.yourdivison.ivao.aero
  then run 
 ```
+test code 
 
 Linux
 ```bash
   python3 main.py
 ```
+if everything works use this code to keep the bot online
+```bash
+  screen -dmS bot-name python3.9 main.py
+```
+
 
 ### ChangeLog
 - 2022/10/12 METAR & TAF command
